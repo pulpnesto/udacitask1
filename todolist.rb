@@ -19,12 +19,16 @@ class TodoList
   	@items.push item
   end
 
+  def remove_item(item_id)
+  	@items.delete_at(item_id-1)
+  end
+
   def complete_item(item_id)
-  	@items[item_id].complete_item
+  	@items[item_id-1].complete_item
   end
 
   def uncomplete_item(item_id)
-  	@items[item_id].uncomplete_item
+  	@items[item_id-1].uncomplete_item
   end
 
   def get_item_index(item)
@@ -36,7 +40,7 @@ class TodoList
   	puts @title
    	@items.each do |item|
   		item_index = get_item_index(item)
-  		item.print_item(item_index)
+  		item.print_item(item_index + 1)
   	end
 	end
 
@@ -64,7 +68,8 @@ class Item
   end
 
   def print_item(index)
-   	puts "#{index} - #{@description} is now #{@completed_status}"
+  	check_box = item_completed? ? "[x]" : "[ ]"
+   	puts "#{check_box} #{index} - #{@description}"
   end
 
 end
