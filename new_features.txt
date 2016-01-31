@@ -12,8 +12,9 @@ Methods in Item Class
 	remove_priority
 	priority?
 
+
 2) DUE DATE
-Added ability to add a due date to the item. Needs to be put in as a string, "3-2-2016" or "1/2/2032" for example. Will output in the todo list as "Due Date: Mar 02, 2016".
+Added ability to add a due date to the item. Needs to be put in as a string in a yy-mm-dd format. Will output in the todo list as "Due Date: <date>".
 
 Methods in TodoList Class
 	add_due_date(item_id, due_date)
@@ -25,3 +26,18 @@ Methods in Item Class
 	is_date_set?
 
 
+3) MENU CLASS
+Created a new class, "Menu", that is in menu.rb. This class allows the user to select options using a menu. (It uses a "clear" screen command that works on my Mac terminal...I also have a "cls" command that is SUPPOSED to work on Window's terminals, per Stack Overflow, but I am unable to test it).
+
+To start the menu'd version, you can create a ruby file in the same folder as todolist.rb and add the text below to the file:
+
+require_relative "menu"
+menu = Menu.new
+menu.print_menu
+
+Or you can start irb and type in:
+load "menu.rb"
+menu = Menu.new
+menu.print_menu
+
+There is a major bug to work out with it...it assumes you actually enter an integer when you are asked...not a string. But, if you follow the instructions, it works (...on a Mac)!
