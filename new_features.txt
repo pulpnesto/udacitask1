@@ -1,0 +1,27 @@
+New features:
+
+1) PRIORITY TASK
+Added ability to prioritize a task. The resulting item has "!!! IMPORTANT !!!" appended to the end of the task and capitalizing task. Also added the ability to remove the priority status.
+
+Methods in TodoList Class
+	prioritize_item(item_id)
+	normalize_item(item_id)
+
+Methods in Item Class
+	make_prioirty
+	remove_priority
+	priority?
+
+2) DUE DATE
+Added ability to add a due date to the item. Needs to be put in as a string, "3-2-2016" or "1/2/2032" for example. Will output in the todo list as "Due Date: Mar 02, 2016".
+
+Methods in TodoList Class
+	add_due_date(item_id, due_date)
+	remove_due_date(item_id)
+
+Methods in Item Class
+	set_due_Date(due_date)
+	remove_date
+	is_date_set?
+
+
